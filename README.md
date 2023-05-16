@@ -13,5 +13,5 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-    - uses: jgustie/approved@main
+    - uses: jgustie/approved/.github/actions/approved@main
 ```

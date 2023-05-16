@@ -5,6 +5,8 @@ runs:
   steps:
   - shell: bash
     if: github.event.pull_request.user.login == 'jgustie'
+    env:
+      GH_TOKEN: ${{ github.token }}
     run: |
       COMMENTS=('LGTM!' 'Interesting!' '🚀!')
       gh pr review --approve --comment --body "${COMMENTS[$(($RANDOM % ${#COMMENTS[@]} + 1))]}"
