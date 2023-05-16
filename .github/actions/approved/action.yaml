@@ -1,0 +1,10 @@
+name: 'Approved'
+description: 'Approves PRs'
+runs:
+  using: "composite"
+  steps:
+  - shell: bash
+    if: github.event.pull_request.user.login == 'jgustie'
+    run: |
+      COMMENTS=('LGTM!' 'Interesting!' '🚀!')
+      gh pr review --approve --comment --body "${COMMENTS[$(($RANDOM % ${#COMMENTS[@]} + 1))]}"
