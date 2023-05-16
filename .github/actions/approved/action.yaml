@@ -8,5 +8,5 @@ runs:
     env:
       GH_TOKEN: ${{ github.token }}
     run: |
-      COMMENTS=('LGTM!' 'Interesting!' '🚀!')
+      COMMENTS=('LGTM!' 'Interesting!' '🚀🚀🚀')
       gh pr review --approve --body "${COMMENTS[$(($RANDOM % ${#COMMENTS[@]} + 1))]}" --repo "${{github.repository}}" ${{github.event.pull_request.number}}
