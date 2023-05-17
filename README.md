@@ -1,6 +1,6 @@
 # Approved
 
-This is the code for the Jeremy Originated Code Approval Bot. It just approves any PR authored by Jeremy.
+This is Jeremy's Automatic Code Ordainment Bot. It just approves any PR authored by Jeremy.
 
 ## Usage
 
