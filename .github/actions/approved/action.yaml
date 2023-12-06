@@ -3,10 +3,10 @@ description: Approves PRs
 runs:
   using: composite
   steps:
-  - shell: bash
-    if: github.event.pull_request.user.login == 'jgustie'
-    env:
-      GH_TOKEN: ${{ github.token }}
-    run: |
-      COMMENTS=('LGTM!' 'Interesting!' '🚀🚀🚀' 'Should work')
-      gh pr review --approve --body "${COMMENTS[$(( ($RANDOM % ${#COMMENTS[@]}) + 1))]}" --repo "${{github.repository}}" ${{github.event.pull_request.number}}
+    - shell: bash
+      if: github.event.pull_request.user.login == 'mariusflorescu'
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        COMMENTS=('LGTM!' 'Interesting!' '🚀🚀🚀' 'Should work')
+        gh pr review --approve --body "${COMMENTS[$(( ($RANDOM % ${#COMMENTS[@]}) + 1))]}" --repo "${{github.repository}}" ${{github.event.pull_request.number}}
